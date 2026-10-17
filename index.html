@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JavaScript Basics Quiz | Next Gen Software Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="logo">JS</span><small><b>NEXT GEN</b><br>SOFTWARE HUB PVT. LTD.</small></div>
+    <button id="themeBtn" class="icon-btn" aria-label="Toggle dark mode">☾</button>
+  </header>
+
+  <!-- Start screen -->
+  <section id="start" class="hero">
+    <div>
+      <span class="chip">Week 2 · Interactive Quiz</span>
+      <h1>JavaScript <em>Basics</em> Quiz</h1>
+      <div class="rule"></div>
+      <p class="muted">Pick a category and get a fresh random round every time. 20 seconds per question, so build a streak and earn your rank.</p>
+      <h2 class="plans">PLANS :</h2>
+      <ol class="plans-list">
+        <li>Introduction to JavaScript</li>
+        <li>DOM Manipulation and Events</li>
+        <li>Basic Animations and Interactivity</li>
+        <li>Project: Interactive Quiz (you're using it now!)</li>
+      </ol>
+    </div>
+    <svg class="atom" viewBox="0 0 300 300" role="img" aria-label="Atom with a database icon">
+      <g class="spin">
+        <g transform="rotate(0 150 150)"><ellipse class="orbit" cx="150" cy="150" rx="120" ry="45"/><circle class="e" cx="30" cy="150" r="10"/></g>
+        <g transform="rotate(60 150 150)"><ellipse class="orbit" cx="150" cy="150" rx="120" ry="45"/><circle class="e" cx="270" cy="150" r="10"/></g>
+        <g transform="rotate(120 150 150)"><ellipse class="orbit" cx="150" cy="150" rx="120" ry="45"/><circle class="e" cx="30" cy="150" r="10"/></g>
+      </g>
+      <g class="db">
+        <path d="M114 120v60c0 7 16 13 36 13s36-6 36-13v-60" fill="var(--blue)"/>
+        <ellipse cx="150" cy="120" rx="36" ry="13" fill="var(--blue)" stroke="var(--card)" stroke-width="4"/>
+        <path d="M114 140c0 7 16 13 36 13s36-6 36-13M114 160c0 7 16 13 36 13s36-6 36-13" fill="none" stroke="var(--card)" stroke-width="4"/>
+      </g>
+    </svg>
+    <div class="catwrap">
+      <h2 class="plans">CHOOSE YOUR QUIZ :</h2>
+      <div id="cats" class="cats"></div>
+    </div>
+  </section>
+
+  <!-- Quiz screen -->
+  <section id="quiz" hidden>
+    <div class="hud"><span id="qCount"></span><span id="topic" class="chip"></span><span id="streak"></span></div>
+    <div class="bar"><i id="progress"></i></div>
+    <div class="card" id="card">
+      <div class="timer" id="timerBar"><i id="timerFill"></i></div>
+      <h2 id="qText"></h2>
+      <div id="opts" class="opts"></div>
+      <div id="fb" class="fb" hidden aria-live="polite"><p id="fbText"></p><button id="nextBtn" class="btn">Next →</button></div>
+    </div>
+  </section>
+
+  <!-- Result screen -->
+  <section id="result" hidden>
+    <div class="card res">
+      <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="ringFg" cx="60" cy="60" r="52"/><text id="ringText" x="60" y="70"></text></svg>
+      <h2 id="rank"></h2>
+      <p id="rankMsg" class="muted"></p>
+      <div class="stats">
+        <div><strong id="sCorrect"></strong><span>Correct</span></div>
+        <div><strong id="sStreak"></strong><span>Best streak</span></div>
+        <div><strong id="sTime"></strong><span>Total time</span></div>
+      </div>
+      <h3>Review</h3>
+      <ul id="review" class="review"></ul>
+      <button id="again" class="btn">New random round ↻</button>
+      <button id="home" class="btn ghost">Categories</button>
+    </div>
+  </section>
+
+  <footer class="muted">Built with HTML, CSS &amp; vanilla JavaScript · Next Gen Software Hub</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
